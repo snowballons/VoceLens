@@ -19,9 +19,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<JavaSdkDirectory Condition="Exists('C:\Users\--\AppData\Local\Java')">C:\Users\--\AppData\Local\Java</JavaSdkDirectory>
-		<!-- AndroidSupportedAbis is set here to build a universal APK supporting multiple architectures -->
-		<AndroidSupportedAbis>arm64-v8a;armeabi-v7a;x86_64</AndroidSupportedAbis>
-		<!-- Note: armeabi-v7a adds ~10-20MB to APK size but improves compatibility with older 32-bit ARM devices -->
+		<!-- RuntimeIdentifiers specifies the target runtimes for AOT compilation.
+			This replaces the deprecated AndroidSupportedAbis property.
+			Multi-ABI universal APK supporting arm64-v8a, armeabi-v7a, and x86_64 architectures -->
+		<RuntimeIdentifiers>android-arm64;android-arm;android-x64</RuntimeIdentifiers>
+		<!-- Note: android-arm (armeabi-v7a) adds ~10-20MB to APK size but improves compatibility with older 32-bit ARM devices -->
 		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 		<!-- AOT compilation settings -->
 
