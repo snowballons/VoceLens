@@ -75,8 +75,7 @@ jobs:
             -p:AndroidSigningKeyStore=vocelens-release.keystore \
             -p:AndroidSigningKeyAlias="${{ secrets.ANDROID_KEY_ALIAS }}" \
             -p:AndroidSigningKeyPass="${{ secrets.ANDROID_KEY_PASSWORD }}" \
-            -p:AndroidSigningStorePass="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
-            -p:AndroidSupportedAbis="arm64-v8a;armeabi-v7a;x86_64"
+            -p:AndroidSigningStorePass="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}"
 
       - name: Prepare Release Artifacts
         run: |

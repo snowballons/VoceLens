@@ -19,11 +19,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<JavaSdkDirectory Condition="Exists('C:\Users\--\AppData\Local\Java')">C:\Users\--\AppData\Local\Java</JavaSdkDirectory>
-		<!-- AOT compilation settings -->
-		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-		<!-- AndroidSupportedAbis is set via CI pipeline (-p:AndroidSupportedAbis="arm64-v8a;armeabi-v7a;x86_64")
-			which allows building a universal APK supporting multiple architectures -->
+		<!-- AndroidSupportedAbis is set here to build a universal APK supporting multiple architectures -->
+		<AndroidSupportedAbis>arm64-v8a;armeabi-v7a;x86_64</AndroidSupportedAbis>
 		<!-- Note: armeabi-v7a adds ~10-20MB to APK size but improves compatibility with older 32-bit ARM devices -->
+		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+		<!-- AOT compilation settings -->
 
 		<!-- Enable XAML source generation for faster build times and improved performance.
 		     This generates C# code from XAML at compile time instead of runtime inflation.
